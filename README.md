@@ -45,6 +45,19 @@ Start server :
 npm start
 ```
 
+### Usage
+1. Use curl or postman in order to send the following request and create a user.
+```bash
+curl --location 'http://localhost:3000/api/v1/user' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "email":"aaa.bbb@gmail.com",
+    "password":"123456789",
+    "name":"YourName"
+}'
+```
+2. Connect to 'http://localhost:30001/login' in order to create a JWT token
+
 ## Roadmap
 
 - [ ] Configuration of application
@@ -67,7 +80,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Maxime Dauvergne - dauvergne.maxime@gmail.com
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Project Link: [https://github.com/krelianer/marvel-front](https://github.com/krelianer/marvel-front)
 
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/

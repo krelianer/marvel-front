@@ -10,9 +10,14 @@ const getAuthorizationHeader = () => `Bearer ${getToken()}`;
 const axiosInstance = axios.create({
   baseURL: process.env.REACT_APP_MARVEL_BACK_API_URL + process.env.REACT_APP_MARVEL_BACK_API_ENDPOINT,
   headers: {
-    'Content-Type': 'application/json',
-    Authorization: getAuthorizationHeader()
+    'Content-Type': 'application/json'
   }
 });
+
+axiosInstance.interceptors.request.use((config) => {
+  config.headers.Authorization = getAuthorizationHeader();
+
+  return config;
+})
 
 export default axiosInstance;
